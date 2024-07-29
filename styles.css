@@ -2,70 +2,60 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: 'Rubik';
+    font-family: 'Rubik', sans-serif;
     background-image: url('bg.png');
     background-size: cover;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
 }
 
-#yes {
+#yes, #noBtn {
     background-color: #EF4848;
     color: white;
     border-radius: 10px;
-    width: 200px;
+    width: 80%;
+    max-width: 200px;
     height: 50px;
-    font-family: 'Rubik';
-    font-size: 30px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.5rem;
     border: 3px solid #FC8787;
     cursor: pointer;
-    position: relative;
-    right: 100%;
-    transition: ease-in-out 0.2s;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
-#noBtn {
-    background-color: #EF4848;
-    color: white;
-    border-radius: 10px;
-    width: 200px;
-    height: 50px;
-    font-family: 'Rubik';
-    font-size: 30px;
-    border: 3px solid #FC8787;
-    cursor: pointer;
-    position: absolute;
-    left: 54%;
-    flex-shrink: 0;
-    transition: ease-in-out 0.2s;
-}
-
-#noBtn:hover {
+#yes:hover, #noBtn:hover {
     background-color: white;
     color: #EF4848;
-    transition: ease-in-out 0.2s;
-}
-
-#yes:hover {
-    background-color: white;
-    color: #EF4848;
-    transition: ease-in-out 0.2s;
-}
-
-button{
-    display: block;
-    position: absolute;
 }
 
 #buttons {
-    display: flex; /* Размещаем кнопки в flex-контейнере */
-    justify-content: center; /* Выравниваем кнопки по центру по горизонтали */
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
 }
 
 p {
-    font-size: 50px;
+    font-size: 2.5rem;
     color: white;
     text-shadow: 
         -2px -2px 0 #000,  
          2px -2px 0 #000,
         -2px  2px 0 #000,
          2px  2px 0 #000;
+    text-align: center;
+    margin: 20px;
+}
+
+/* Медиазапросы для адаптивности */
+@media (max-width: 600px) {
+    p {
+        font-size: 2rem;
+    }
+
+    #yes, #noBtn {
+        font-size: 1.2rem;
+        height: 40px;
+    }
 }
