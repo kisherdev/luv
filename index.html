@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>luv <3</title>
+    <link rel="icon" href="logo.png" type="image/icon type">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <p id="luvtxt">ТЫ будешь моей валентинкой?</p>
+    <img class="luv" src="https://media.tenor.com/0oox4ceUlJsAAAAi/mochi-cat-hi.gif">
+    <div id="buttons">
+        <button id="yes">ДА</button>
+        <button id="noBtn">нет :&lt;</button>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $("#noBtn").click(function() {
+                var changeTop = Math.random() * (200 - $("#noBtn").outerHeight());
+                var changeLeft = Math.random() * (200 - $("#noBtn").outerWidth());
+                $("#noBtn").css("margin-top", changeTop + "px");
+                $("#noBtn").css("margin-left", changeLeft + "px");
+            });
+
+            $("#yes").click(function() {
+                $("#yes").hide();
+                $("#noBtn").hide();
+                $(".luv").attr("src", 'https://media.tenor.com/MeZYpkc_q-oAAAAi/catkiss.gif');
+                let luvtxt = document.getElementById("luvtxt");
+                luvtxt.innerText = '<3';
+            });
+        });
+    </script>
+</body>
+</html>
